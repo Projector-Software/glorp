@@ -1,6 +1,6 @@
-Extension { #name : #PostgreSQLPlatform }
+Extension { #name : 'PostgreSQLPlatform' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 PostgreSQLPlatform >> hexPrintBlob: aByteArray on: aStream for: aType [
 
 	aStream nextPutAll: 'E'''.

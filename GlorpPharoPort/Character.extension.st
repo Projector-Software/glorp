@@ -1,6 +1,6 @@
-Extension { #name : #Character }
+Extension { #name : 'Character' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 Character >> isAlphabetic [
 
 	^ self isLetter

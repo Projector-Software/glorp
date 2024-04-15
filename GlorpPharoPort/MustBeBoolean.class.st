@@ -1,10 +1,11 @@
 Class {
-	#name : #MustBeBoolean,
-	#superclass : #Error,
-	#category : #GlorpPharoPort
+	#name : 'MustBeBoolean',
+	#superclass : 'Error',
+	#category : 'GlorpPharoPort',
+	#package : 'GlorpPharoPort'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 MustBeBoolean class >> isResumable [
 
 	^ true

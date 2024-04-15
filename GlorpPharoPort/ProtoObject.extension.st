@@ -1,6 +1,6 @@
-Extension { #name : #ProtoObject }
+Extension { #name : 'ProtoObject' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 ProtoObject >> _isProxy [
 	^true.
 ]

@@ -13,8 +13,8 @@ isInTransaction
 
 "
 Class {
-	#name : #PharoDatabaseAccessor,
-	#superclass : #DatabaseAccessor,
+	#name : 'PharoDatabaseAccessor',
+	#superclass : 'DatabaseAccessor',
 	#instVars : [
 		'isInTransaction',
 		'databaseDriver'
@@ -22,30 +22,31 @@ Class {
 	#classVars : [
 		'DefaultDriver'
 	],
-	#category : #GlorpPharoPort
+	#category : 'GlorpPharoPort',
+	#package : 'GlorpPharoPort'
 }
 
-{ #category : #configuration }
+{ #category : 'configuration' }
 PharoDatabaseAccessor class >> DefaultDriver [
 	^DefaultDriver
 ]
 
-{ #category : #configuration }
+{ #category : 'configuration' }
 PharoDatabaseAccessor class >> DefaultDriver: aDriver [
 	DefaultDriver := aDriver
 ]
 
-{ #category : #executing }
+{ #category : 'executing' }
 PharoDatabaseAccessor >> basicExecuteSQLString: aString [
 	^self databaseDriver basicExecuteSQLString: aString  
 ]
 
-{ #category : #executing }
+{ #category : 'executing' }
 PharoDatabaseAccessor >> basicExecuteSQLString: aString binding: aBindingArray [
 	^self databaseDriver basicExecuteSQLString: aString binding: aBindingArray 
 ]
 
-{ #category : #executing }
+{ #category : 'executing' }
 PharoDatabaseAccessor >> basicExecuteSQLStringNoResult: aString doing: aBlock [
 
 	| a |
@@ -54,27 +55,27 @@ PharoDatabaseAccessor >> basicExecuteSQLStringNoResult: aString doing: aBlock [
 	^a
 ]
 
-{ #category : #transactions }
+{ #category : 'transactions' }
 PharoDatabaseAccessor >> beginTransaction [
 	self log: 'Begin Transaction'.
 	isInTransaction := true.
 	self databaseDriver beginTransaction
 ]
 
-{ #category : #transactions }
+{ #category : 'transactions' }
 PharoDatabaseAccessor >> commitTransaction [
 	self log: 'Commit Transaction'.
 	isInTransaction := false.
 	self databaseDriver commitTransaction
 ]
 
-{ #category : #executing }
+{ #category : 'executing' }
 PharoDatabaseAccessor >> connection [
 	self databaseDriver ifNil: [ ^nil ].
 	^self databaseDriver connection
 ]
 
-{ #category : #login }
+{ #category : 'login' }
 PharoDatabaseAccessor >> connectionArgsFromCurrentLogin [
 
 	"connect string looks like  hostname:portNumber_db-name. :portNumber is optional"
@@ -91,7 +92,7 @@ PharoDatabaseAccessor >> connectionArgsFromCurrentLogin [
 		password: self currentLogin password
 ]
 
-{ #category : #login }
+{ #category : 'login' }
 PharoDatabaseAccessor >> connectionClassForLogin: aLogin [ 
 
 	self class DefaultDriver ifNotNil: [ ^ self class DefaultDriver ].
@@ -102,33 +103,33 @@ PharoDatabaseAccessor >> connectionClassForLogin: aLogin [
 	self error: 'A driver is not installed for platform: ' , aLogin database class name
 ]
 
-{ #category : #login }
+{ #category : 'login' }
 PharoDatabaseAccessor >> databaseDriver [
 	^ databaseDriver
 ]
 
-{ #category : #login }
+{ #category : 'login' }
 PharoDatabaseAccessor >> databaseDriver: aDriver [
 	databaseDriver := aDriver
 ]
 
-{ #category : #executing }
+{ #category : 'executing' }
 PharoDatabaseAccessor >> disconnect [
 	^ self connection disconnect
 ]
 
-{ #category : #executing }
+{ #category : 'executing' }
 PharoDatabaseAccessor >> driverSession [
 
 	^ databaseDriver connection 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PharoDatabaseAccessor >> encoding [
 	 ^self connection queryEncoding
 ]
 
-{ #category : #executing }
+{ #category : 'executing' }
 PharoDatabaseAccessor >> executeCommandBound: aCommand [
 	| answerStream |
 	self logCommand: aCommand bound: true.
@@ -142,7 +143,7 @@ PharoDatabaseAccessor >> executeCommandBound: aCommand [
 	
 ]
 
-{ #category : #executing }
+{ #category : 'executing' }
 PharoDatabaseAccessor >> executeCommandUnbound: aCommand [
 	| answerStream |
 	self log: aCommand sqlString.
@@ -150,12 +151,12 @@ PharoDatabaseAccessor >> executeCommandUnbound: aCommand [
 	^self cursorFor: answerStream command: aCommand.
 ]
 
-{ #category : #executing }
+{ #category : 'executing' }
 PharoDatabaseAccessor >> externalDatabaseErrorSignal [
 	^ Dialect error
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 PharoDatabaseAccessor >> initialize [
 	super initialize.
 	reusePreparedStatements := false.
@@ -163,24 +164,24 @@ PharoDatabaseAccessor >> initialize [
 	logging := false "Set to true to see Glorp's SQL transcript."
 ]
 
-{ #category : #executing }
+{ #category : 'executing' }
 PharoDatabaseAccessor >> innerExceptionFor: exception [
 	"I don't know how to get the inner error in Squeak"
 	^exception messageText.
 ]
 
-{ #category : #transactions }
+{ #category : 'transactions' }
 PharoDatabaseAccessor >> isInTransaction [
 	^ isInTransaction
 ]
 
-{ #category : #login }
+{ #category : 'login' }
 PharoDatabaseAccessor >> isLoggedIn [
 	self databaseDriver ifNil: [^ false].
 	^ self databaseDriver isConnected
 ]
 
-{ #category : #login }
+{ #category : 'login' }
 PharoDatabaseAccessor >> loginIfError: aBlock [ 
 	self log: 'Login'.
 	self databaseDriver ifNil: [ 
@@ -196,7 +197,7 @@ PharoDatabaseAccessor >> loginIfError: aBlock [
 	self log: 'Login finished'
 ]
 
-{ #category : #login }
+{ #category : 'login' }
 PharoDatabaseAccessor >> logout [
 	self isLoggedIn ifFalse: [^self].
 	self log: 'Logout'.
@@ -204,31 +205,31 @@ PharoDatabaseAccessor >> logout [
 	self log: 'Logout finished'
 ]
 
-{ #category : #executing }
+{ #category : 'executing' }
 PharoDatabaseAccessor >> releaseCursor: aCursor in: aPreparedStatement [
 	"Release the cursor. We're trapping exceptions, so return true or false to indicate success/failure"
 	aCursor isNil ifTrue: [^self].
 	^[aCursor close. true] on: Dialect error do: [:ex | ex return: false].
 ]
 
-{ #category : #transactions }
+{ #category : 'transactions' }
 PharoDatabaseAccessor >> rollbackTransaction [
 	self log: 'Rollback Transaction'.
 	isInTransaction := false.
 	self databaseDriver rollbackTransaction
 ]
 
-{ #category : #executing }
+{ #category : 'executing' }
 PharoDatabaseAccessor >> rowCount [
 	^ self databaseDriver rowCount.
 ]
 
-{ #category : #login }
+{ #category : 'login' }
 PharoDatabaseAccessor >> showDialog: aString [ 
 	UIManager default inform: aString
 ]
 
-{ #category : #executing }
+{ #category : 'executing' }
 PharoDatabaseAccessor >> upToEndOfReturningResultSet: aGlorpCursoredStream [
 	"Ask the relative type how to assign returned value(s) to the target column(s) of my rows.  As result returns an array of arrays, we need the inner array.  If relative fields and values are not the same size, #with:do: will raise an error."
 	

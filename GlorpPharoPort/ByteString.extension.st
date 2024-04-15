@@ -1,6 +1,6 @@
-Extension { #name : #ByteString }
+Extension { #name : 'ByteString' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 ByteString >> isByteIndexed [
 
 	^true

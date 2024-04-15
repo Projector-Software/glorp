@@ -1,6 +1,6 @@
-Extension { #name : #ScaledDecimal }
+Extension { #name : 'ScaledDecimal' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 ScaledDecimal >> glorpPrintSQLOn: aStream [ 
 
 	self printOn: aStream showingDecimalPlaces: scale

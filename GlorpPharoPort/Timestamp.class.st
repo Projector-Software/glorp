@@ -1,10 +1,11 @@
 Class {
-	#name : #Timestamp,
-	#superclass : #DateAndTime,
-	#category : #GlorpPharoPort
+	#name : 'Timestamp',
+	#superclass : 'DateAndTime',
+	#category : 'GlorpPharoPort',
+	#package : 'GlorpPharoPort'
 }
 
-{ #category : #adding }
+{ #category : 'adding' }
 Timestamp >> addMilliseconds: aNumber [
 
 	^ self + aNumber milliSeconds 

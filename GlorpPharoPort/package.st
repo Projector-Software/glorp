@@ -1,1 +1,1 @@
-Package { #name : #GlorpPharoPort }
+Package { #name : 'GlorpPharoPort' }

@@ -1,6 +1,6 @@
-Extension { #name : #ByteArray }
+Extension { #name : 'ByteArray' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 ByteArray >> asStringEncoding: encoding [ 
 
 	^ self decodeWith: (ZnCharacterEncoder newForEncoding: encoding)

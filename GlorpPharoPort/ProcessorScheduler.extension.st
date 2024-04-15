@@ -1,6 +1,6 @@
-Extension { #name : #ProcessorScheduler }
+Extension { #name : 'ProcessorScheduler' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 ProcessorScheduler >> activePriorityPlusOne [
 	^self activePriority + 1 
 ]

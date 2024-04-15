@@ -1,25 +1,25 @@
-Extension { #name : #P3Client }
+Extension { #name : 'P3Client' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 P3Client >> answer [
 
 	message tag = $Z ifTrue: [ ^ #noAnswerStream ].
 
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 P3Client >> suggestedDefaultTimeZone [
 
 	^ 'CET'
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 P3Client >> timezone [
 
 	^ properties at: 'TimeZone'
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 P3Client >> timezone: aTimeZone [
 
 	^ properties at: 'TimeZone' put: aTimeZone

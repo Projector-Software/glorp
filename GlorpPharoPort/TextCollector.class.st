@@ -1,21 +1,22 @@
 Class {
-	#name : #TextCollector,
-	#superclass : #Object,
+	#name : 'TextCollector',
+	#superclass : 'Object',
 	#instVars : [
 		'strings',
 		'currentString'
 	],
-	#category : #GlorpPharoPort
+	#category : 'GlorpPharoPort',
+	#package : 'GlorpPharoPort'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 TextCollector >> cr [ 
 
 	strings add: currentString.
 	currentString := String new.
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 TextCollector >> initialize [ 
 
 	super initialize.
@@ -23,13 +24,13 @@ TextCollector >> initialize [
 	currentString := String new.
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 TextCollector >> show: aString [
 
 	currentString := currentString, aString.
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 TextCollector >> value [ 
 	
 	^ (strings joinUsing: String cr), currentString

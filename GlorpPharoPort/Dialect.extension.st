@@ -1,6 +1,6 @@
-Extension { #name : #Dialect }
+Extension { #name : 'Dialect' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 Dialect class >> isPharo [
 
 	^ self dialectName = #Pharo

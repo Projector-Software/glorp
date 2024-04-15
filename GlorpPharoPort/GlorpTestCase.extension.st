@@ -1,5 +1,5 @@
-Extension { #name : #GlorpTestCase }
+Extension { #name : 'GlorpTestCase' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 GlorpTestCase class >> sunitName [ ^ self name
 ]

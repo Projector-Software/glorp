@@ -1,6 +1,6 @@
-Extension { #name : #WeakValueDictionary }
+Extension { #name : 'WeakValueDictionary' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 WeakValueDictionary >> manager: anObject [
 	"Added for compatibility - Do nothing."
 	

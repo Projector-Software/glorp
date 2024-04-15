@@ -1,12 +1,12 @@
-Extension { #name : #Number }
+Extension { #name : 'Number' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 Number >> d [
 
 	^ self
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 Number >> respondsToArithmetic [
 	"Answer whether the object responds to the numeric (#+, #-, #*, #/)
 	protocol as defined in the class ArithmeticValue"

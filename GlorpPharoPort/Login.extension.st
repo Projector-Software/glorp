@@ -1,6 +1,6 @@
-Extension { #name : #Login }
+Extension { #name : 'Login' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 Login >> databaseName [
 	"connect string looks like hostname:portNumber_db-name.
 	:portNumber is optional"
@@ -19,28 +19,28 @@ Login >> databaseName [
 			^ databaseName]
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 Login >> databaseName: aDatabaseName [
 	databaseName := aDatabaseName
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 Login >> discardPassword [
 
 	password := nil
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 Login >> encodingStrategy [
 	^encodingStrategy
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 Login >> encodingStrategy: anEncodingStrategy [
 	encodingStrategy := anEncodingStrategy.
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 Login >> host [
 	"connect string looks like hostname:portNumber_db-name.
 	:portNumber is optional"
@@ -57,12 +57,12 @@ Login >> host [
 			^ host]
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 Login >> host: aHost [
 	host := aHost.
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 Login >> port [
 	"connect string looks like hostname:portNumber_db-name.
 	:portNumber is optional"
@@ -81,7 +81,7 @@ Login >> port [
 			^ port]
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 Login >> port: aPort [
 	port := aPort.
 ]

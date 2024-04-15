@@ -1,6 +1,6 @@
-Extension { #name : #MessageArchiver }
+Extension { #name : 'MessageArchiver' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 MessageArchiver >> isNil [ 
 
 	"in Pharo, the ProtoObject implements isNil message (so the MessageArchiver understands it). We need to pretend that it is not known"

@@ -1,11 +1,11 @@
-Extension { #name : #Proxy }
+Extension { #name : 'Proxy' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 Proxy >> readSlot: aSlot [
 	^aSlot read: self
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 Proxy >> stDisplayString [ 
 
 	self isInstantiated

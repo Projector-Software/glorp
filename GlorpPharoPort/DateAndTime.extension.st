@@ -1,12 +1,12 @@
-Extension { #name : #DateAndTime }
+Extension { #name : 'DateAndTime' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 DateAndTime >> addSeconds: aNumber [
 
 	^ self + aNumber seconds
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 DateAndTime >> asMilliseconds [
 	"Answer the number of milliseconds since midnight"
 
@@ -14,14 +14,14 @@ DateAndTime >> asMilliseconds [
 
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 DateAndTime >> milliseconds [
 	"Added for GLORP compatibility"
 
 	^(nanos / 1000000.0) truncated
 ]
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 DateAndTime >> subtractSeconds: aNumber [
 
 	^ self - aNumber seconds

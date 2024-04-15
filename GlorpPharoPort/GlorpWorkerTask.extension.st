@@ -1,6 +1,6 @@
-Extension { #name : #GlorpWorkerTask }
+Extension { #name : 'GlorpWorkerTask' }
 
-{ #category : #'*GlorpPharoPort' }
+{ #category : '*GlorpPharoPort' }
 GlorpWorkerTask >> <= aTask [ 
 	
 	^(self > aTask) not
